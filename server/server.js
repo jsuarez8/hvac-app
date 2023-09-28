@@ -3,6 +3,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
+import RegisterRouter from "./routes/Register.js";
+import LoginRouter from "./routes/Login.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -45,3 +47,9 @@ app.use((err, req, res, next) => {
     message: "An internal server error occurred!",
   });
 });
+
+// When user accesses localhost3000/Register the server access UserRouter and its functions within (GET, POST, etc)
+app.use("/Register", RegisterRouter);
+
+// When user accesses localhost3000/Login the server access UserRouter and its functions within (GET, POST, etc)
+app.use("/Login", LoginRouter);
