@@ -1,6 +1,6 @@
 import express from "express";
 import { json } from "express";
-import { RegisterUser } from "../controller/Register.js";
+import { registerUser } from "../controllers/register.js";
 
 const router = express.Router();
 
@@ -8,10 +8,11 @@ router.use(json());
 
 router.get("/", (req, res) => {
   console.log("Register Page");
+  res.json("this is a register page");
 });
 
 router.post("/", (req, res) => {
-  RegisterUser(req, res);
+  registerUser(req, res);
 });
 
 // Tap into anything in this page via the router

@@ -1,4 +1,4 @@
-export const RegisterUser = (request, response) => {
+export const registerUser = (request, response) => {
   try {
     console.log(
       "name: " +
