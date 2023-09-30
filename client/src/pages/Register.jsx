@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-  return <div></div>;
-};
+  const [inputs, setInputs] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  console.log(inputs);
+
+  return {};
+};
 export default Register;

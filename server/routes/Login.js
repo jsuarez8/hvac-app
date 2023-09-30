@@ -1,6 +1,6 @@
 import express from "express";
 import { json } from "express";
-import { loginUser } from "../controllers/login";
+import { loginUser, logoutUser } from "../controllers/login";
 
 const router = express.Router();
 
@@ -11,6 +11,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", loginUser);
+
+router.post("/", logoutUser);
 
 // Tap into anything in this page via the router
 export default router;
