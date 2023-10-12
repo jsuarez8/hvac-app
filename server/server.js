@@ -3,8 +3,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import registerRouter from "./routes/register.js";
-import loginRouter from "./routes/login.js";
+import registerRouter from "../server/routes/register.js";
+import loginRouter from "../server/routes/login.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -40,6 +40,12 @@ server.on("error", (error) => {
   }
 });
 
+// When user accesses localhost3000/Register the server access UserRouter and its functions within (GET, POST, etc)
+app.use("/register", registerRouter);
+
+// When user accesses localhost3000/Login the server access UserRouter and its functions within (GET, POST, etc)
+app.use("/login", loginRouter);
+
 // Error-handling middleware for handling errors during request/response
 app.use((err, req, res, next) => {
   console.error(err.stack); // Log the error stack trace to the console
@@ -48,8 +54,4 @@ app.use((err, req, res, next) => {
   });
 });
 
-// When user accesses localhost3000/Register the server access UserRouter and its functions within (GET, POST, etc)
-app.use("/register", registerRouter);
-
-// When user accesses localhost3000/Login the server access UserRouter and its functions within (GET, POST, etc)
-app.use("/login", loginRouter);
+export default app;

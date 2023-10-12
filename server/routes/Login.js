@@ -1,6 +1,6 @@
 import express from "express";
 import { json } from "express";
-import { loginUser, logoutUser } from "../controllers/login";
+import { loginUser, logoutUser } from "../controllers/login.js";
 
 const router = express.Router();
 

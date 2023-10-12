@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+  </head>
+
+  <body>
+    <!-- Start of the registration form -->
+    <form action="/register" method="post">
+      <!-- Email input field -->
+      <!-- Label provides a text description of the field -->
+      <label for="email">Email:</label>
+      <!-- Input field where users can type their email -->
+      <input type="email" id="email" name="email" required />
+      <br /><br />
+      <!-- Line breaks to add some spacing -->
+
+      <!-- Password input field -->
+      <label for="password">Password:</label>
+      <!-- Input field where users can type their password -->
+      <!-- The 'password' type hides characters for privacy -->
+      <input type="password" id="password" name="password" required />
+      <br /><br />
+
+      <!-- Register button -->
+      <!-- When clicked, the form data will be sent to the server -->
+      <input type="submit" value="Register" />
+    </form>
+    <!-- End of the registration form -->
+  </body>
+</html>

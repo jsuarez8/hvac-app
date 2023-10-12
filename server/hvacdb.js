@@ -16,12 +16,23 @@ const db = mysql2
   .promise();
 
 // Try to establish a connection to the database.
-connection.connect((error) => {
-  if (error) {
+// connection.connect((error) => {
+//   if (error) {
+//     console.log("Error connecting to the database:", err.stack);
+//     return;
+//   }
+//   console.log("Connection established successfully to the database");
+// });
+
+// Note: With MySQL2's promise-based pool, you don't actually
+// need to explicitly connect. The pool will handle connections
+// behind the scenes. However, if you want to check the connection:
+db.execute("SELECT 1")
+  .then(() => {
+    console.log("Connection established successfully to the database");
+  })
+  .catch((err) => {
     console.log("Error connecting to the database:", err.stack);
-    return;
-  }
-  console.log("Connection established successfully to the database");
-});
+  });
 
 export default db;

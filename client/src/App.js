@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Services from "./pages/Services";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider value={router}>
+    <RouterProvider router={router}>
       {/* Assuming the router automatically renders the matched element */}
     </RouterProvider>
   );

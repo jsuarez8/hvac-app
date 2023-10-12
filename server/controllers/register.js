@@ -1,4 +1,4 @@
-import { db } from "../hvacdb.js";
+import db from "../hvacdb.js";
 export const registerUser = (request, response) => {
   // CHECK EXISTING USER
 
@@ -19,7 +19,7 @@ export const registerUser = (request, response) => {
     // a salt and perform 10 rounds of processing. Once the hashing is done,
     // the callback function will be executed.
     bcrypt.hash(password, 10, (err, hashedPassword) => {
-      // 10,Number of rounds to use when generating a salt. Higher means more secure, but slower.
+      // 10, number of rounds to use when generating a salt. Higher means more secure, but slower.
       if (err) {
         console.error(err);
         return response.status(500).json("Error hashing password.");
@@ -39,22 +39,4 @@ export const registerUser = (request, response) => {
       response.status(200).send("User Registered");
     });
   });
-
-  // try {
-  //   console.log(
-  //     "name: " +
-  //       request.body.name +
-  //       " email: " +
-  //       request.body.email +
-  //       " password: " +
-  //       request.body.password
-  //   );
-  //   response.status(200).send("User Registered");
-  // } catch (err) {
-  //   console.log(
-  //     response
-  //       .status(500)
-  //       .send(err.message, "Error registering user when attempting to register")
-  //   );
-  // }
 };
