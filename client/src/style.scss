@@ -1,5 +1,13 @@
 .app {
+  display: flex;
+  justify-content: center;
   .container {
+    width: 1024;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
     //LOGIN & REGISTER
 
     .auth {
@@ -11,16 +19,45 @@
       height: 100vh;
     }
 
-    form {
+    .title {
+      width: auto;
+      height: auto;
+    }
+
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 7vh;
+    }
+
+    .company-name {
+      height: auto;
+      width: auto;
+    }
+
+    .form-style {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      align-items: center;
+      justify-content: center;
+      width: 20vw;
+      height: 40vh;
+      border-radius: 20px;
+    }
+
+    .login-container,
+    .register-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      border: 2px solid white;
     }
 
-    .loginForm {
-      border-style: solid;
-      border-color: black;
+    .login-form,
+    .register-form {
       border-width: 2px;
       border-radius: 5%;
       padding: 200px;
@@ -30,17 +67,93 @@
       align-items: center;
     }
 
-    input,
-    .loginButton {
+    input {
       background: hsl(0deg 0% 100%);
       box-shadow: 0 0 2em hsl(231deg 62% 94%);
-      padding: 1em;
+      padding: 15px;
       display: flex;
+      border: none;
+      border-bottom: 1px solid grey;
       flex-direction: column;
       gap: 0.5em;
       border-radius: 20px;
       color: hsl(0deg 0% 30%);
       margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .login-button,
+    .register-button {
+      background: white;
+      box-shadow: 0 0 2em hsl(231deg 62% 94%);
+      padding: 15px;
+      display: flex;
+      border: none;
+      border-bottom: 1px solid grey;
+      flex-direction: column;
+      border-radius: 20px;
+      color: hsl(0deg 0% 30%);
+      margin-bottom: 10px;
+      cursor: pointer;
+      width: 50%;
+      align-items: center;
+      margin-left: 1vw;
+    }
+
+    //NAVBAR
+
+    .navbar {
+      .navbar-container {
+        padding: 10px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .navbar-logo {
+          img {
+            width: 120px;
+          }
+        }
+        .navbar-links {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          h6 {
+            font-size: 16px;
+            font-weight: 300;
+          }
+
+          span {
+            cursor: pointer;
+          }
+
+          .profile {
+            background-color: lightgrey;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 300;
+            border: 1px solid white;
+
+            &:hover {
+              color: red;
+              background-color: white;
+              border: 1px solid black;
+            }
+          }
+        }
+      }
+    }
+
+    // FOOTER
+
+    footer {
+      img {
+        height: 50px;
+      }
     }
   }
 }
