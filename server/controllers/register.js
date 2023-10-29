@@ -4,61 +4,50 @@ import bcrypt from "bcrypt";
 export const registerUser = (req, res) => {
   console.log("registerUser function invoked");
 
-  // Log the request body to see incoming data
-  console.log("Request body:", req.body);
-
   // CHECK EXISTING USER
 
   const checkUserQuery =
     " SELECT * FROM user WHERE email = ? OR firstName = ? OR lastName = ?";
 
-  db.query(
-    checkUserQuery,
-    [req.body.email, req.body.name, req.body.name],
-    (err, data) => {
-      if (err) {
-        console.error("Error querying user:", err);
-        return res.status(500).json("Server error.");
-      }
-      if (data.length) {
-        console.log("User found in database:", data);
-        return res.status(409).json("User already exists!");
-      }
+  const checkUserRes = db.query(checkUserQuery, [
+    req.body.email,
+    req.body.name,
+    req.body.name,
+  ]);
 
-      // Hash the password and create a user
-      // The hashing is done using an asynchronous function.
-      // The number 10 here means bcrypt will automatically generate
-      // a salt and perform 10 rounds of processing. Once the hashing is done,
-      // the callback function will be executed.
+  if (!checkUserRes) {
+    console.error(err);
+    res.status(500).json("Server error.");
+  } else if (checkUserRes.length) {
+    res.status(409).json("User already exists!");
+  }
 
-      bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
-        //10, number of rounds to use when generating a salt. Higher means more secure, but slower.
-        if (err) {
-          console.error("Error hashing password:", err);
-          return res.status(500).json("Error hashing password.");
-        }
+  // Hash the password and create a user
+  // The hashing is done using an asynchronous function.
+  // The number 10 here means bcrypt will automatically generate
+  // a salt and perform 10 rounds of processing. Once the hashing is done,
+  // the callback function will be executed.
 
-        const insertUserQuery =
-          "INSERT INTO user (`email`, `password`, `firstName`, `lastName`) VALUES (?, ?, ?, ?)";
-        const values = [
-          req.body.email,
-          hashedPassword,
-          req.body.firstName,
-          req.body.lastName,
-        ];
-
-        console.log("Hashed password:", hashedPassword);
-
-        db.query(insertUserQuery, [values], (err, data) => {
-          if (err) {
-            console.error("Error inserting user:", err);
-            return res.status(500).json("Error registering user.");
-          }
-
-          console.log("User registered successfully:", data);
-          res.status(200).send("User Registered");
-        });
-      });
+  bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
+    //10, number of rounds to use when generating a salt. Higher means more secure, but slower.
+    if (err) {
+      console.error(err);
+      return res.status(500).json("Error hashing password.");
     }
-  );
+
+    const [firstName, lastName] = req.body.name.split(" ");
+
+    const insertUserQuery =
+      "INSERT INTO user (email, password, firstName, lastName) VALUES (?);";
+    const values = [req.body.email, req.body.password, firstName, lastName];
+
+    const result = db.query(insertUserQuery, [values]);
+
+    if (!result) {
+      console.error(err);
+      res.status(500).json("Error registering user.");
+    } else {
+      res.status(200).send("User Registered");
+    }
+  });
 };

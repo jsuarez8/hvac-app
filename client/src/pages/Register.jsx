@@ -10,6 +10,8 @@ const Register = () => {
     name: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -18,6 +20,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await axios.post("http://localhost:8800/register", inputs);
+      navigate("/login");
       console.log(res.data);
     } catch (err) {
       console.log(err);
