@@ -2,6 +2,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import registerRouter from "../server/routes/register.js";
 import loginRouter from "../server/routes/login.js";
@@ -13,14 +14,18 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "https://localhost:3000",
-  credentials: true,
+  origin: "http://localhost:3000",
+
+  credentials: true, // allow session cookie to be sent with requests
+  methods: ["GET", "POST", "PUT", "DELETE"], // allowed methods
+  allowedHeaders: ["Content-Type", "Authorization"], // allowed headers
 };
 
 // Middleware used in the express application
-app.use(bodyParser.json());
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors(corsOptions));
+app.use(cookieParser());
 
 // Start server
 const PORT = process.env.PORT || 8800;

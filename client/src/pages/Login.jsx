@@ -11,7 +11,7 @@ const Login = () => {
         <form className="form-style">
           <div className="login-container">
             <h1 className="title">Login</h1>
-            <input type="text" placeholder="username" />
+            <input type="email" placeholder="email" />
             <input type="password" placeholder="password" />
             <button className="login-button">Login</button>
             <span>

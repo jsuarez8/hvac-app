@@ -43,6 +43,7 @@
       width: 20vw;
       height: 40vh;
       border-radius: 20px;
+      min-width: 400px;
     }
 
     .login-container,
@@ -108,6 +109,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(64, 150, 255, 0.55);
 
     .navbar-logo {
       img {
@@ -129,7 +131,7 @@
       }
 
       .profile {
-        background-color: lightgrey;
+        background-color: rgb(64, 150, 255, 0.55);
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -137,12 +139,13 @@
         align-items: center;
         justify-content: center;
         font-weight: 300;
+        color: white;
         border: 1px solid white;
 
         &:hover {
-          color: red;
+          color: rgb(64, 150, 255, 0.55);
           background-color: white;
-          border: 1px solid black;
+          border: 1px solid rgb(64, 150, 255, 0.55);
         }
       }
     }
@@ -152,6 +155,13 @@
 // FOOTER
 
 footer {
+  margin-top: 100px;
+  padding: 20px;
+  background-color: rgb(64, 150, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
   img {
     height: 50px;
   }
