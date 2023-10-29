@@ -4,6 +4,9 @@ import bcrypt from "bcrypt";
 export const registerUser = (req, res) => {
   console.log("registerUser function invoked");
 
+  // Log the request body to see incoming data
+  console.log("Request body:", req.body);
+
   // CHECK EXISTING USER
 
   const checkUserQuery =
@@ -14,10 +17,11 @@ export const registerUser = (req, res) => {
     [req.body.email, req.body.name, req.body.name],
     (err, data) => {
       if (err) {
-        console.error(err);
+        console.error("Error querying user:", err);
         return res.status(500).json("Server error.");
       }
       if (data.length) {
+        console.log("User found in database:", data);
         return res.status(409).json("User already exists!");
       }
 
@@ -30,7 +34,7 @@ export const registerUser = (req, res) => {
       bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
         //10, number of rounds to use when generating a salt. Higher means more secure, but slower.
         if (err) {
-          console.error(err);
+          console.error("Error hashing password:", err);
           return res.status(500).json("Error hashing password.");
         }
 
@@ -43,12 +47,15 @@ export const registerUser = (req, res) => {
           req.body.lastName,
         ];
 
+        console.log("Hashed password:", hashedPassword);
+
         db.query(insertUserQuery, [values], (err, data) => {
           if (err) {
-            console.error(err);
+            console.error("Error inserting user:", err);
             return res.status(500).json("Error registering user.");
           }
 
+          console.log("User registered successfully:", data);
           res.status(200).send("User Registered");
         });
       });
