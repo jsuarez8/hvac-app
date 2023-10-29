@@ -15,10 +15,7 @@ const app = express();
 
 const corsOptions = {
   origin: "http://localhost:3000",
-
   credentials: true, // allow session cookie to be sent with requests
-  methods: ["GET", "POST", "PUT", "DELETE"], // allowed methods
-  allowedHeaders: ["Content-Type", "Authorization"], // allowed headers
 };
 
 // Middleware used in the express application

@@ -2,6 +2,8 @@ import db from "../hvacdb.js";
 import bcrypt from "bcrypt";
 
 export const registerUser = (req, res) => {
+  console.log("registerUser function invoked");
+
   // CHECK EXISTING USER
 
   const checkUserQuery =
@@ -34,7 +36,12 @@ export const registerUser = (req, res) => {
 
         const insertUserQuery =
           "INSERT INTO user (`email`, `password`, `firstName`, `lastName`) VALUES (?, ?, ?, ?)";
-        const values = [req.body.email, hashedPassword, firstName, lastName];
+        const values = [
+          req.body.email,
+          hashedPassword,
+          req.body.firstName,
+          req.body.lastName,
+        ];
 
         db.query(insertUserQuery, [values], (err, data) => {
           if (err) {

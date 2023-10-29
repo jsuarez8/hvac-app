@@ -1,15 +1,15 @@
 import db from "../hvacdb.js";
 import jwt from "jsonwebtoken";
 
-export const loginUser = (request, response) => {
+export const loginUser = (req, res) => {
   const q = "SELECT * FROM user WHERE email = ? or username = ?";
   db.query(q, [req.body.email], (err, data) => {
     if (err) {
       console.error(err);
-      return response.status(500).json("Server error.");
+      return res.status(500).json("Server error.");
     }
     if (data.length === 0) {
-      return response.status(409).json("User not found!");
+      return res.status(409).json("User not found!");
     }
 
     const checkPassword = bcrypt.compareSync(
@@ -22,7 +22,7 @@ export const loginUser = (request, response) => {
   });
 };
 
-export const logoutUser = (request, response) => {
+export const logoutUser = (req, res) => {
   res
     .clearCookie("accessToken", {
       secure: true,
