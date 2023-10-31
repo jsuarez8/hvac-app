@@ -1,0 +1,50 @@
+//NAVBAR
+
+.navbar {
+  .navbar-container {
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(64, 150, 255, 0.55);
+
+    .navbar-logo {
+      img {
+        width: 120px;
+      }
+    }
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      h6 {
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      span {
+        cursor: pointer;
+      }
+
+      .profile {
+        background-color: rgb(64, 150, 255, 0.55);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 300;
+        color: white;
+        border: 1px solid white;
+
+        &:hover {
+          color: rgb(64, 150, 255, 0.55);
+          background-color: white;
+          border: 1px solid rgb(64, 150, 255, 0.55);
+        }
+      }
+    }
+  }
+}

@@ -18,6 +18,10 @@ const corsOptions = {
 };
 
 // Middleware used in the express application
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
