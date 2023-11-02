@@ -9,8 +9,9 @@ const ServiceBoxes = () => {
         <div className="service-grid">
           {/* Heating */}
           <div className="service-box service-heating">
+            <div className="service-icon heating-icon"></div>
             <div className="service-content">
-              <h3 className="service-title">Heating</h3>
+              <h3 className="service-title">Heating & Cooling</h3>
               <p className="service-description">
                 Ensure your home stays warm and cozy during colder months with
                 our efficient heating solutions.
@@ -24,7 +25,7 @@ const ServiceBoxes = () => {
           {/* Cooling */}
           <div className="service-box service-cooling">
             <div className="service-content">
-              <h3 className="service-title">Cooling</h3>
+              <h3 className="service-title">HVAC Maintenance</h3>
               <p className="service-description">
                 Stay cool and comfortable during hot weather with our top-notch
                 cooling services.

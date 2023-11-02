@@ -6,6 +6,7 @@ import Login from "./pages/Auth/Login.jsx";
 import Register from "./pages/Auth/Register.jsx";
 import Services from "./pages/Services";
 import Footer from "./components/Footer/Footer.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
 import "./index.scss";
 
 import {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
 ]);
 

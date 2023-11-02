@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 import "./Navbar.scss";
 import Logo from "./../../img/logo-2.png";
 
@@ -28,7 +30,7 @@ const Navbar = () => {
           </Link>
           <span className="profile">
             <Link className="link" to="/profile">
-              Profile
+              <Avatar size={35} icon={<UserOutlined />} />
             </Link>
           </span>
         </div>

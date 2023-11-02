@@ -33,8 +33,6 @@ const Home = () => {
         </Card>
       </div>
 
-      {/* Divider */}
-      <hr className="divider" />
       {/* Schedule Consultation Section */}
       <div className="consultation-section">
         <h2 className="consultation-title">Schedule a Free Consultation Now</h2>
