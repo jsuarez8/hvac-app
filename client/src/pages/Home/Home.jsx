@@ -69,11 +69,11 @@ const Home = () => {
           <img
             src={HomePageConsultation}
             alt="Fort Myers City"
-            className="homepage-consultation fort-myers-picture"
+            className="fort-myers-image"
           />
-          <h1 className="homepage-consultation-title">
-            We Proudly Serve All These Florida Communities
-          </h1>
+          <div className="homepage-consultation-title">
+            <h1>We Proudly Serve All These Florida Communities</h1>
+          </div>
         </div>
       </div>
     </div>
