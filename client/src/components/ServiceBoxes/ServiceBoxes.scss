@@ -44,13 +44,21 @@
           background: #353535;
         }
 
-        &.service-heating {
-          // Specific styles for Heating box, if needed
+        .service-icon {
+          width: 90%; // or the width you desire
+          height: 100%; // or the height you desire
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center; // centers the background image
+          align-self: center;
+          margin: -15px auto 5px auto; // negative top margin to make it float above
         }
 
-        // Add similar structures for other service types
-        &.service-cooling {
-          // Specific styles for Cooling box, if needed
+        .service-heating-cooling,
+        .service-icon {
+        }
+
+        .service-maintenance .service-icon {
         }
 
         &.service-air-quality {

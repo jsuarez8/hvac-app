@@ -5,10 +5,45 @@ footer {
   padding: 20px;
   background-color: rgb(64, 150, 255, 0.55);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   font-size: 15px;
-  img {
-    height: 50px;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; // allows the items to wrap if the screen is too small
+  }
+
+  .footer-logo {
+    flex: 1;
+    margin-right: 20px;
+    img {
+      height: 175px;
+    }
+  }
+
+  .footer-cities {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; // Align items to the start of the cross axis
+    gap: 18px; // Adjust the gap as needed
+
+    .city {
+      flex: 1;
+      padding: 0 20px; // Reset padding, if needed
+
+      h3 {
+        font-size: 2em; // Increase the font size of the city titles
+        margin-bottom: 50px; // Decrease the margin bottom to bring the description closer
+      }
+
+      p {
+        // Body text is within <p> tags or a div with class 'body-text'
+        margin-top: 20px; // increase the top margin to create more space above the body text
+      }
+
+      // Other styles for the city descriptions can go here
+    }
   }
 }

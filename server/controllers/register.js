@@ -37,6 +37,7 @@ export const registerUser = (req, res) => {
 
     const [firstName, lastName] = req.body.name.split(" ");
 
+    // INSERT NEW USER
     const insertUserQuery =
       "INSERT INTO user (email, password, firstName, lastName) VALUES (?);";
     const values = [req.body.email, req.body.password, firstName, lastName];
