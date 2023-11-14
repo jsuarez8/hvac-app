@@ -47,26 +47,32 @@ const Register = () => {
             {/* Register title displayed as an H1 heading. */}
             <h1 className="title">Register</h1>
             {/* Input field for the username. */}
-            <input
-              type="text"
-              placeholder="Name"
-              name="name"
-              onChange={handleChange}
-            />
+            <div className="register-input-group">
+              <input
+                type="text"
+                placeholder="Name"
+                name="name"
+                onChange={handleChange}
+              />
+            </div>
             {/* Input field for the email, for email validation of account */}
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              onChange={handleChange}
-            />
+            <div className="register-input-group">
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                onChange={handleChange}
+              />
+            </div>
             {/* Input field for the password. */}
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={handleChange}
-            />
+            <div className="register-input-group">
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={handleChange}
+              />
+            </div>
             {/* Registration button that users click to submit the form. */}
             <button
               className="register-button"

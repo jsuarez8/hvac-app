@@ -1,21 +1,130 @@
 .contact-container {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  width: 80%;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+}
+
+.contact-page-image {
+  width: 100vw; // Sets the width to be 100% of the viewport width
+  height: auto;
+  position: relative; // For positioning
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 80vh;
+    display: block; // Removes any extra space that would normally be below an inline element
+  }
+}
+
+.contact-title-overlay {
+  position: absolute;
+  top: 50%; // Centers the title vertically
+  left: 50%; // Centers the title horizontally
+  transform: translate(-50%, -50%); // Adjusts the exact centering of the title
+  color: black; // Set the text color to white or any color that stands out on the image
+  text-align: center; // Center aligns the text
+
+  h1 {
+    color: black;
+    transform: translate(10%, 90%);
+    font-size: 3em;
+    border-radius: 10px;
+  }
+
+  p {
+    transform: translate(8%, 90%);
+    color: rgba(64, 150, 255);
+    font-size: 1.3em;
+    padding: 5px;
+    line-height: 26px;
+  }
+}
+
+.contact-body-top {
+  text-align: center;
+  color: rgba(64, 150, 255);
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.contact-body-bottom {
+  text-align: center;
+  color: rgba(64, 150, 255);
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.contact-form-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 50px;
+  border: solid black;
+}
+
+.contact-input-group {
+  display: flex; // Add this to make sure flex-direction is applied
+  flex-direction: row; // Stack the children vertically
+  gap: 20px; // Space between each input container
+  align-items: center;
+
+  .input-with-label {
+    display: flex;
+    flex-direction: column; // Stack the label and input vertically
+    width: 100%; // Assuming you want to maintain the 40% width per input
+    flex: 1;
+
+    h6 {
+      margin-bottom: 5px; // Space between label and input
+      font-size: 1em;
+      align-self: center;
+    }
+
+    input {
+      width: 80%;
+      padding: 15px;
+      outline: none;
+      transition: all 0.2s ease;
+      background: hsl(0deg 0% 100%);
+      border: 1px solid #ddd;
+      border-bottom: 1px solid grey;
+      margin-top: none;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+      align-self: center;
+    }
+  }
+}
+
+textarea {
+  width: 100%; // Takes the full width of its container
+  height: 150px;
+  padding: 15px; // Padding inside the textarea
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 0px;
+  outline: none;
+  transition: all 0.2s ease;
 }
 
 .contact-button {
-}
-.contact-details {
-  flex: 2;
-  background-color: #f8f8f8;
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  display: block;
+  color: white;
+  background-color: lightcoral;
+  padding: 10px;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 30px;
+  box-shadow: 5px 5px rgba(255, 64, 64, 0.4), 10px 10px rgba(255, 64, 64, 0.3),
+    15px 15px rgba(255, 64, 64, 0.2), 20px 20px rgba(255, 64, 64, 0.1),
+    25px 25px rgba(255, 64, 64, 0.05);
+  margin: 20px auto 0;
 }

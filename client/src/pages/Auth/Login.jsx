@@ -36,18 +36,22 @@ const Login = () => {
         <form className="form-style">
           <div className="login-container">
             <h1 className="title">Login</h1>
-            <input
-              type="email"
-              placeholder="email"
-              name="email"
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              placeholder="password"
-              name="password"
-              onChange={handleChange}
-            />
+            <div className="login-input-group">
+              <input
+                type="email"
+                placeholder="email"
+                name="email"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="login-input-group">
+              <input
+                type="password"
+                placeholder="password"
+                name="password"
+                onChange={handleChange}
+              />
+            </div>
             {err & err}
             <button className="login-button" onClick={handleLogin}>
               Login

@@ -58,7 +58,8 @@
   align-items: center;
 }
 
-input {
+.register-input-group,
+.login-input-group {
   background: hsl(0deg 0% 100%);
   box-shadow: 0 0 2em hsl(231deg 62% 94%);
   padding: 15px;
@@ -71,6 +72,10 @@ input {
   color: hsl(0deg 0% 30%);
   margin-bottom: 10px;
   cursor: pointer;
+
+  input {
+    border: none;
+  }
 }
 
 .login-button,

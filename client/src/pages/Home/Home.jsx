@@ -71,8 +71,24 @@ const Home = () => {
             alt="Fort Myers City"
             className="fort-myers-image"
           />
-          <div className="homepage-consultation-title">
-            <h1>We Proudly Serve All These Florida Communities</h1>
+          <div className="homepage-consultation-overlay">
+            <h1 className="homepage-consultation-title">
+              We Proudly Serve All These Florida Communities
+            </h1>
+            <p className="homepage-consultation-text">
+              Bonita Springs, FL • Cape Coral, FL • Captiva, FL • Estero, FL •
+              Fort Myers, FL • Lehigh Acres, FL • Marco Island, FL
+              <p>
+                • Naples, FL • North Port, FL • Port Charlotte, FL • Punta
+                Gorda, FL • Sanibel, FL
+              </p>
+            </p>
+            <p className="homepage-consultation-text-2">
+              and Surrounding Communities
+            </p>
+            <button className="homepage-consultation-button">
+              SCHEDULE A CONSULTATION NOW!
+            </button>
           </div>
         </div>
       </div>

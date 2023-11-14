@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ContactPageImage from "./../../img/contact-page-image.png";
+
 import "./Contact.scss";
 
 function Contact() {
@@ -32,71 +34,89 @@ function Contact() {
 
   return (
     <div className="contact-container">
-      <h1>Let's Get In Touch</h1>
-      <p>
-        If there are any questions you may have, please do not hesitate to
-        submit any comments or concerns here!
-      </p>
-
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="input-group">
-          <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-
-        <input
-          type="text"
-          name="lastName"
-          placeholder="Last Name"
-          onChange={handleInputChange}
-          required
+      <div className="contact-page-image">
+        <img
+          src={ContactPageImage}
+          alt="Contact Page"
+          className="contact-page-image"
         />
-
-        <div className="input-group">
-          <input
-            type="email"
-            name="email"
-            placeholder="email@company.com"
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="text"
-            name="phone"
-            placeholder="(123) 456-7890"
-            onChange={handleInputChange}
-            required
-          />
+        <div className="contact-title-overlay">
+          <h1>Reach Us Anywhere You Go!</h1>
+          <p>Fill out the form below to get in contact with us today</p>
         </div>
+      </div>
+      <div className="contact-form-container">
+        <div className="contact-body-top">
+          <h1>We’re Here to Help, So Contact Us Today!</h1>
+          <p>
+            You shouldn’t feel like you have to wait until something isn’t
+            working right to speak with your local service company. At Breeze
+            Boss in Ft. Myers, we believe customer service is round-the-clock.
+            Should you have questions, comments or an idea to share with us,
+            feel free to let us know! We'll do our best to help however we can.
+          </p>
+          <p>Do not hesitate to submit any comments or concerns here.</p>
+        </div>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="contact-input-group">
+            <div className="input-with-label">
+              <h6>First Name *</h6>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                onChange={handleInputChange}
+                required
+              />
 
-        <textarea
-          name="assistance"
-          placeholder="How Can We Be Of Assistance?"
-          onChange={handleInputChange}
-        ></textarea>
+              <h6>Email *</h6>
+              <input
+                type="email"
+                name="email"
+                placeholder="email@company.com"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
 
-        <p>
-          Don't worry, we'll use your contact information responsibly and we
-          never sell our customer's information!
-        </p>
+            <div className="input-with-label">
+              <h6>Last Name *</h6>
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                onChange={handleInputChange}
+                required
+              />
 
-        <button className="contact-button" type="submit">
-          Send
-        </button>
-      </form>
+              <h6>Phone Number *</h6>
+              <input
+                type="text"
+                name="phone"
+                placeholder="(123) 456-7890"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
 
-      <div className="contact-details">
-        <h3>Certified Heating and Cooling</h3>
-        {/* address and phone number */}
-        <p>5000 Alico Center Rd., Suite ABC</p>
-        <p>Fort Myers, FL 33967</p>
-        <p>Give Us a Call!!</p>
-        <p>(239)123-3456</p>
+          <textarea
+            name="assistance"
+            placeholder="Leave your message here"
+            onChange={handleInputChange}
+          ></textarea>
+
+          <div className="contact-body-bottom">
+            <p>
+              Don't worry, we'll use your contact information responsibly and we
+              never sell our customer's information!
+            </p>
+          </div>
+
+          <button className="contact-button" type="submit">
+            Send your request
+          </button>
+        </form>
       </div>
     </div>
   );
