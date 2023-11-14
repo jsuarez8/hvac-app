@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import registerRouter from "../server/routes/register.js";
 import loginRouter from "../server/routes/login.js";
+import contactRouter from "../server/routes/contact.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -50,6 +51,8 @@ app.use("/register", registerRouter);
 
 // When user accesses localhost3000/Login the server access UserRouter and its functions within (GET, POST, etc)
 app.use("/login", loginRouter);
+
+app.use("/contact", contactRouter);
 
 // Error-handling middleware for handling errors during request/response
 app.use((err, req, res, next) => {
