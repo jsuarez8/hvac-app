@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Card, Divider } from "antd";
-import ContactPageImage from "./../../img/contact-page-image.png";
-
 import "./Contact.scss";
 
 function Contact() {
@@ -21,31 +19,33 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // try {
-    //   const res = fetch("http://localhost:8800/contact", formData);
-    //   navigate("/");
-    //   console.log(res.data);
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        console.log("Form data submitted successfully");
+      } else {
+        console.log("Form data failed to submit");
+      }
+    } catch (error) {
+      console.error("There was an issue with submitting the form", error);
+    }
   };
 
   return (
     <div className="contact-container">
-      <div className="contact-page-image">
-        <img
-          src={ContactPageImage}
-          alt="Contact Page"
-          className="contact-page-image"
-        />
-        <div className="contact-title-overlay">
-          <h1>Reach Us Anywhere You Go!</h1>
-          <p>Fill out the form below to get in contact with us today</p>
-        </div>
+      <div className="contact-title-overlay">
+        <h1>Reach Us Anywhere You Go!</h1>
+        <p>Fill out the form below to get in contact with us today</p>
       </div>
+
       <div className="contact-form-container">
         <Card
           bodyStyle={{
@@ -126,11 +126,13 @@ function Contact() {
                 we never sell our customer's information!
               </p>
             </div>
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Button htmlType="submit" className="contact-button">
-                Send your request
-              </Button>
-            </Form.Item>
+            <Form className="contact-form" onFinish={handleSubmit}>
+              <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                <Button htmlType="submit" className="contact-button">
+                  Send your request
+                </Button>
+              </Form.Item>
+            </Form>
           </Form>
         </Card>
       </div>

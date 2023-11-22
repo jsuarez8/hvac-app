@@ -1,0 +1,181 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 40px; // Padding around the section
+
+  .about-header {
+    h2 {
+      color: black;
+      font-size: 2.8em;
+      margin-bottom: 0.5em; // Space between the title and the paragraph
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-bottom: 1em; // Space between the paragraph and the content below
+    }
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: space-between; // Space between the facts and the image
+    align-items: flex-start; // Align items to the start of the flex container
+    width: 100%; // The content container takes the full width of its parent
+    margin: 0 auto; // Centers the content
+
+    .facts-container {
+      flex: 1; // Allows the container to grow and take up space
+      margin-right: 40px;
+
+      h3 {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+      }
+
+      .facts-list {
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+
+        .fact-item {
+          position: relative;
+          margin: 20px 0;
+          padding-left: 50px;
+          font-size: 1.2em;
+
+          &::before {
+            content: "✔";
+            font-size: 1.5em;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px; // Ensures the line has width
+          }
+
+          // Assign colors to each fact item
+          &.fact-1 {
+            color: blue;
+          }
+          &.fact-2 {
+            color: red;
+          }
+          &.fact-3 {
+            color: grey;
+          }
+          &.fact-4 {
+            color: orange;
+          }
+          &.fact-5 {
+            color: purple;
+          }
+          &.fact-6 {
+            color: green;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 10px;
+            width: 100%;
+            max-width: 350px;
+            height: 2px;
+            background: currentColor;
+          }
+          &:first-child::after {
+            background: blue; // Top border color for the first item
+          }
+
+          &:last-child::after {
+            // If you want the last item to have no bottom border
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .about-video-container {
+    flex-grow: 2; // Gives the video container more room to grow
+    max-width: 100%; // Ensures it doesn't exceed its parent container
+    padding: 20px;
+
+    iframe {
+      width: 100%; // Relative to its parent container
+      height: auto; // Maintain aspect ratio
+      border: none;
+      aspect-ratio: 16 / 9; // Maintains a 16:9 aspect ratio
+      max-width: 800px; // Ensure it doesn't overflow its container
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column; // Stacks the elements vertically on smaller screens
+
+      .facts-container,
+      .about-video-container {
+        width: 100%; // Takes the full width on smaller screens
+        padding: 0;
+        max-width: none; // Removes any max-width constraints
+      }
+    }
+  }
+
+  .about-us-container {
+    margin-top: 20px;
+    flex-direction: column;
+    width: 100%;
+
+    .about-us-content {
+      h3 {
+        font-size: 3em;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.2em;
+        text-align: center;
+        padding-bottom: 50px;
+      }
+    }
+
+    .team-section {
+      display: flex;
+      justify-content: space-between;
+
+      .team-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1; // Allows the container to grow and take up space
+
+        .team-member {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 20px;
+
+          img {
+            width: 10vw;
+            height: 20vh;
+            margin-right: 15px;
+          }
+
+          .member-info {
+            h4 {
+              font-size: 1.2em;
+            }
+            p {
+              font-size: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

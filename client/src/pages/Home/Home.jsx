@@ -4,6 +4,7 @@ import { Card, Flex, Typography } from "antd";
 import "./Home.scss";
 import ServiceBoxes from "../../components/ServiceBoxes/ServiceBoxes.jsx";
 import HomePageConsultation from "./../../img/fort-myers-city.png";
+
 const Home = () => {
   return (
     <div className="home">
