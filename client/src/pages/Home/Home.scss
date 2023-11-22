@@ -133,6 +133,14 @@
       cursor: pointer;
       align-items: center;
       font-size: 20px;
+      text-decoration: none; // Remove the default underline from links
+
+      &:hover {
+        background-color: darken(
+          lightcoral,
+          10%
+        ); // Darken the button color on hover
+      }
     }
   }
 }

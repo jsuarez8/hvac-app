@@ -86,9 +86,14 @@ const Home = () => {
             <p className="homepage-consultation-text-2">
               and Surrounding Communities
             </p>
-            <button className="homepage-consultation-button">
+            <a
+              href="http://localhost:3000/services"
+              className="homepage-consultation-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               SCHEDULE A CONSULTATION NOW!
-            </button>
+            </a>
           </div>
         </div>
       </div>

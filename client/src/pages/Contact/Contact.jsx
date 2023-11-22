@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form, Input, Button, Card, Divider } from "antd";
 import ContactPageImage from "./../../img/contact-page-image.png";
 
 import "./Contact.scss";
@@ -46,77 +47,92 @@ function Contact() {
         </div>
       </div>
       <div className="contact-form-container">
-        <div className="contact-body-top">
-          <h1>We’re Here to Help, So Contact Us Today!</h1>
-          <p>
-            You shouldn’t feel like you have to wait until something isn’t
-            working right to speak with your local service company. At Breeze
-            Boss in Ft. Myers, we believe customer service is round-the-clock.
-            Should you have questions, comments or an idea to share with us,
-            feel free to let us know! We'll do our best to help however we can.
-          </p>
-          <p>Do not hesitate to submit any comments or concerns here.</p>
-        </div>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="contact-input-group">
-            <div className="input-with-label">
-              <h6>First Name *</h6>
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                onChange={handleInputChange}
-                required
-              />
-
-              <h6>Email *</h6>
-              <input
-                type="email"
-                name="email"
-                placeholder="email@company.com"
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
-            <div className="input-with-label">
-              <h6>Last Name *</h6>
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                onChange={handleInputChange}
-                required
-              />
-
-              <h6>Phone Number *</h6>
-              <input
-                type="text"
-                name="phone"
-                placeholder="(123) 456-7890"
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-          </div>
-
-          <textarea
-            name="assistance"
-            placeholder="Leave your message here"
-            onChange={handleInputChange}
-          ></textarea>
-
-          <div className="contact-body-bottom">
+        <Card
+          bodyStyle={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <div className="contact-body-top">
+            <h1>We’re Here to Help, So Contact Us Today!</h1>
             <p>
-              Don't worry, we'll use your contact information responsibly and we
-              never sell our customer's information!
+              You shouldn’t feel like you have to wait until something isn’t
+              working right to speak with your local service company. At Breeze
+              Boss in Ft. Myers, we believe customer service is round-the-clock.
+              Should you have questions, comments or an idea to share with us,
+              feel free to let us know! We'll do our best to help however we
+              can.
             </p>
+            <p>Do not hesitate to submit any comments or concerns here.</p>
           </div>
 
-          <button className="contact-button" type="submit">
-            Send your request
-          </button>
-        </form>
+          <Divider />
+
+          <Form
+            name="contact"
+            labelCol={{ span: 6 }}
+            wrapperCol={{ span: 16 }}
+            style={{ maxWidth: 600, paddingTop: 20 }}
+            onFinish={handleSubmit}
+            scrollToFirstError
+          >
+            <Form.Item
+              label="First Name"
+              rules={[
+                { required: true, message: "Please input your first name!" },
+              ]}
+            >
+              <Input onChange={handleInputChange} placeholder="First Name" />
+            </Form.Item>
+            <Form.Item
+              label="Last Name"
+              rules={[
+                { required: true, message: "Please input your last name!" },
+              ]}
+            >
+              <Input onChange={handleInputChange} placeholder="Last Name" />
+            </Form.Item>
+            <Form.Item
+              label="Email"
+              rules={[{ required: true, message: "Please input your email!" }]}
+            >
+              <Input
+                onChange={handleInputChange}
+                placeholder="Email"
+                type="email"
+              />
+            </Form.Item>
+            <Form.Item
+              label="Phone Number"
+              rules={[
+                { required: true, message: "Please input your phone number!" },
+              ]}
+            >
+              <Input
+                onChange={handleInputChange}
+                placeholder="(123) 456-7890"
+              />
+            </Form.Item>
+            <Form.Item label="Description">
+              <Input.TextArea
+                onChange={handleInputChange}
+                placeholder="Leave your message here"
+              />
+            </Form.Item>
+            <div className="contact-body-bottom">
+              <p>
+                Don't worry, we'll use your contact information responsibly and
+                we never sell our customer's information!
+              </p>
+            </div>
+            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+              <Button htmlType="submit" className="contact-button">
+                Send your request
+              </Button>
+            </Form.Item>
+          </Form>
+        </Card>
       </div>
     </div>
   );

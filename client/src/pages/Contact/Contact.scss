@@ -51,6 +51,11 @@
   font-weight: bold;
 }
 
+.contact-body-top > p {
+  color: black;
+  font-weight: normal;
+}
+
 .contact-body-bottom {
   text-align: center;
   color: rgba(64, 150, 255);
@@ -59,9 +64,13 @@
 }
 .contact-form-container {
   width: 100%;
-  max-width: 600px;
-  padding: 50px;
-  border: solid black;
+  max-width: 800px;
+  margin: 100px;
+}
+
+.contact-form-card {
+  display: flex;
+  align-content: center;
 }
 
 .contact-input-group {
@@ -115,16 +124,14 @@ textarea {
 }
 
 .contact-button {
-  display: block;
-  color: white;
-  background-color: lightcoral;
-  padding: 10px;
-  border: none;
-  border-radius: 18px;
+  color: lightcoral;
+  border-color: lightcoral !important;
   cursor: pointer;
-  font-size: 30px;
-  box-shadow: 5px 5px rgba(255, 64, 64, 0.4), 10px 10px rgba(255, 64, 64, 0.3),
-    15px 15px rgba(255, 64, 64, 0.2), 20px 20px rgba(255, 64, 64, 0.1),
-    25px 25px rgba(255, 64, 64, 0.05);
-  margin: 20px auto 0;
+}
+
+.contact-button:hover {
+  color: white !important;
+  background-color: lightcoral;
+  box-shadow: 0 1px 2px -2px rgba(255, 64, 64, 0.26),
+    0 3px 6px 0 rgba(255, 64, 64, 0.16), 0 5px 12px 4px rgba(255, 64, 64, 0.09);
 }
