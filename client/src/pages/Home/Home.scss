@@ -54,10 +54,6 @@
     }
   }
 
-  .divider {
-    // Any specific styles for the divider.
-  }
-
   .home-paragraph-container {
     display: flex;
     flex-direction: column;
@@ -67,6 +63,7 @@
     height: fit-content;
     padding: 150px;
   }
+
   .home-paragraph-title {
     h1 {
       // Style for main title (h1)
@@ -100,8 +97,7 @@
     .homepage-consultation-overlay {
       position: relative;
       color: white;
-      // padding: 150px;
-      bottom: 500px;
+      bottom: 600px;
       text-align: center;
       font-weight: bold;
     }

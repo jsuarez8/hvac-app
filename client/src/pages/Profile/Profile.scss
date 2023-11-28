@@ -1,0 +1,28 @@
+.layout {
+  height: 100vh;
+
+  .site-layout-background {
+    background: #fff;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .category-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 4px;
+
+    &.red {
+      background-color: #ffcccc;
+      color: #ff4d4f;
+    }
+
+    // Define other color styles...
+  }
+}

@@ -1,5 +1,6 @@
 import db from "../hvacdb.js";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 export const loginUser = (req, res) => {
   const q = "SELECT * FROM user WHERE email = ? or username = ?";

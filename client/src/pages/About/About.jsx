@@ -70,12 +70,12 @@ const About = () => {
                 <h4>Lead Project Superintendent</h4>
                 <p>E-Mail Manny</p>
               </div>
-              <div className="team-member">
-                <img src={Polar} alt="Polar Bear" />
-                <div className="member-info">
-                  <h4>Project Manager - Corporate</h4>
-                  <p>E-Mail Polar</p>
-                </div>
+            </div>
+            <div className="team-member">
+              <img src={Polar} alt="Polar Bear" />
+              <div className="member-info">
+                <h4>Project Manager - Corporate</h4>
+                <p>E-Mail Polar</p>
               </div>
             </div>
           </div>
