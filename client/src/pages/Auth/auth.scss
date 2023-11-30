@@ -1,97 +1,112 @@
-//LOGIN & REGISTER
-
+/* Shared styles for both Login and Register pages */
 .auth {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background-color: rgb(64, 150, 255, 0.55);
+  align-items: center;
   height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #89cff0,
+    #d3d3d3
+  ); /* Baby blue and grey gradient */
 }
 
-.title {
-  width: auto;
-  height: auto;
-}
-
-.title-container {
+.register-form-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  margin-top: 7vh;
-}
-
-.company-name {
-  height: auto;
-  width: auto;
-}
-
-.form-style {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-  width: 20vw;
-  height: 40vh;
-  border-radius: 20px;
-  min-width: 400px;
-}
-
-.login-container,
-.register-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid white;
-}
-
-.login-form,
-.register-form {
-  border-width: 2px;
-  border-radius: 5%;
-  padding: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.register-input-group,
-.login-input-group {
-  background: hsl(0deg 0% 100%);
-  box-shadow: 0 0 2em hsl(231deg 62% 94%);
-  padding: 15px;
-  display: flex;
-  border: none;
-  border-bottom: 1px solid grey;
-  flex-direction: column;
-  gap: 0.5em;
-  border-radius: 20px;
-  color: hsl(0deg 0% 30%);
-  margin-bottom: 10px;
-  cursor: pointer;
-
-  input {
-    border: none;
-  }
-}
-
-.login-button,
-.register-button {
   background: white;
-  box-shadow: 0 0 2em hsl(231deg 62% 94%);
-  padding: 15px;
-  display: flex;
-  border: none;
-  border-bottom: 1px solid grey;
-  flex-direction: column;
-  border-radius: 20px;
-  color: hsl(0deg 0% 30%);
-  margin-bottom: 10px;
-  cursor: pointer;
-  width: 50%;
-  align-items: center;
-  margin-left: 1vw;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 60%;
+
+  .logo-container {
+    text-align: center;
+  }
+
+  .register-form,
+  .login-form {
+    width: 100%;
+
+    .title-container {
+      margin-bottom: 20px;
+      text-align: center;
+
+      .title {
+        font-size: 2.4em;
+        color: rgb(64, 150, 255, 0.55);
+      }
+    }
+
+    .form-style {
+      display: flex; /* Add display flex */
+      flex-direction: column;
+      align-items: center;
+
+      .register-container,
+      .login-container {
+        width: 50%;
+
+        .register-input-group,
+        .login-input-group {
+          width: 100%;
+          margin: 0 auto;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5em;
+          border-radius: 20px;
+          margin-bottom: 10px;
+          align-items: center;
+
+          input,
+          select {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            box-shadow: 0 0 1em hsl(231deg 62% 94%);
+          }
+        }
+
+        .register-button,
+        .login-button {
+          width: 50%;
+          align-items: center;
+          margin: 10px;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background: linear-gradient(to right, #89cff0, #d3d3d3);
+          color: #333;
+          cursor: pointer;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background: linear-gradient(to right, #d3d3d3, #89cff0);
+          }
+        }
+
+        span {
+          display: block;
+          text-align: center;
+          margin-top: 15px;
+          color: #333;
+
+          a {
+            color: #6e8efb;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
 }

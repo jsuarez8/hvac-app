@@ -6,12 +6,10 @@ export const registerUser = (req, res) => {
 
   // CHECK EXISTING USER
 
-  const checkUserQuery =
-    " SELECT * FROM user WHERE email = ? OR firstName = ? OR lastName = ?";
+  const checkUserQuery = " SELECT * FROM user WHERE email = ? OR firstName = ?";
 
   const checkUserRes = db.query(checkUserQuery, [
     req.body.email,
-    req.body.name,
     req.body.name,
   ]);
 
@@ -35,12 +33,10 @@ export const registerUser = (req, res) => {
       return res.status(500).json("Error hashing password.");
     }
 
-    const [firstName, lastName] = req.body.name.split(" ");
-
     // INSERT NEW USER
     const insertUserQuery =
-      "INSERT INTO user (email, password, firstName, lastName) VALUES (?);";
-    const values = [req.body.email, hashedPassword, firstName, lastName];
+      "INSERT INTO user (email, password, firstName ) VALUES (?);";
+    const values = [req.body.email, hashedPassword, req.body.name];
 
     const result = db.query(insertUserQuery, [values]);
 

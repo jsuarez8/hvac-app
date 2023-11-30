@@ -9,13 +9,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
 import "./index.scss";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-  Outlet,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
@@ -48,6 +42,11 @@ const router = createBrowserRouter([
         path: "/services",
         element: <Services />,
       },
+
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
     ],
   },
 
@@ -59,11 +58,6 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
-  },
-
-  {
-    path: "/profile",
-    element: <Profile />,
   },
 ]);
 

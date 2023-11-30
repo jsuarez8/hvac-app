@@ -21,12 +21,6 @@
       overflow: hidden;
       padding: 0;
 
-      &:hover {
-        // You can add a shadow, change background color, or any other effect
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transform: translateY(-5px);
-      }
-
       .card-content {
         justify-content: space-between;
         width: 100%;
@@ -114,48 +108,9 @@
     }
   }
 
-  // FAQ Styles
-  .faq-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-
-    .faq-card {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 550px;
-      margin: 20px;
-
-      .faq-header {
-        padding: 20px;
-        background-color: #f5f5f5;
-
-        h2 {
-          font-size: 24px;
-          margin: 0;
-        }
-      }
-
-      .faq-accordion {
-        .ant-collapse-item {
-          .ant-collapse-header {
-            font-size: 16px;
-            font-weight: 500;
-          }
-
-          .ant-collapse-content {
-            .ant-collapse-content-box {
-              padding: 15px;
-            }
-          }
-        }
-      }
-    }
-  }
-
   // About Us Styles
   .service-info {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,11 +127,6 @@
         height: auto;
         display: auto;
         margin-bottom: -15px;
-
-        &:hover {
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          transform: translateY(-5px);
-        }
       }
     }
     .service-content {
@@ -184,8 +134,7 @@
       z-index: -1;
       display: inline-block;
       text-align: left;
-      padding: 55px 25px;
-      margin-top: -100px;
+      padding: 50px 2px;
       margin-left: auto;
       margin-right: auto;
       width: 80%;
@@ -203,9 +152,47 @@
       p {
         font-size: 1rem;
         color: #333;
-        z-index: 2;
-        position: relative;
         padding: 20px;
+      }
+    }
+  }
+
+  // FAQ Styles
+  .faq-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+
+    .faq-card {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      width: 600px;
+      margin: 20px;
+
+      .faq-header {
+        padding: 35px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+
+        h2 {
+          font-size: 30px;
+          margin: 0;
+        }
+      }
+
+      .faq-accordion {
+        .ant-collapse-item {
+          .ant-collapse-header {
+            font-size: 18px;
+            font-weight: 700px;
+          }
+
+          .ant-collapse-content {
+            .ant-collapse-content-box {
+              padding: 15px;
+            }
+          }
+        }
       }
     }
   }

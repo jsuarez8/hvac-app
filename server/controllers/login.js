@@ -1,9 +1,9 @@
 import db from "../hvacdb.js";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 
 export const loginUser = (req, res) => {
-  const q = "SELECT * FROM user WHERE email = ? or username = ?";
+  const q = "SELECT * FROM user WHERE email = ?";
   db.query(q, [req.body.email], (err, data) => {
     if (err) {
       console.error(err);
@@ -18,8 +18,18 @@ export const loginUser = (req, res) => {
       data[0].password
     );
 
-    if (!checkPassword)
+    if (!checkPassword) {
       return res.status(400).json("Wrong password or username!");
+    }
+
+    // Create JWT token
+    const token = jwt.sign(
+      { id: data[0].id, email: data[0].email },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    res.json({ message: "Login successful", token });
   });
 };
 

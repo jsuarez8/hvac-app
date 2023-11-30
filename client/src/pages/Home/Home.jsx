@@ -82,6 +82,54 @@ const Home = () => {
             </ol>
           </p>
         </div>
+        <div className="faq-container">
+          <div className="faq-card">
+            <div className="faq-header">
+              <h2>Frequently Asked Questions</h2>
+            </div>
+            <Collapse className="faq-accordion" accordion>
+              <Panel
+                header="Why does turning my device off and on again solve all issues?"
+                key="1"
+              >
+                <p>
+                  Because it clears the memory and starts the system from
+                  scratch.
+                </p>
+              </Panel>
+
+              <Panel
+                header="Why does turning my device off and on again solve all issues?"
+                key="2"
+              >
+                <p>
+                  Because it clears the memory and starts the system from
+                  scratch.
+                </p>
+              </Panel>
+
+              <Panel
+                header="Why does turning my device off and on again solve all issues?"
+                key="3"
+              >
+                <p>
+                  Because it clears the memory and starts the system from
+                  scratch.
+                </p>
+              </Panel>
+
+              <Panel
+                header="Why does turning my device off and on again solve all issues?"
+                key="4"
+              >
+                <p>
+                  Because it clears the memory and starts the system from
+                  scratch.
+                </p>
+              </Panel>
+            </Collapse>
+          </div>
+        </div>
       </div>
 
       <div className="homepage-consultation">
@@ -115,51 +163,6 @@ const Home = () => {
               SCHEDULE A CONSULTATION NOW!
             </a>
           </div>
-        </div>
-      </div>
-
-      <div className="faq-container">
-        <div className="faq-card">
-          <div className="faq-header">
-            <h2>Frequently Asked Questions</h2>
-          </div>
-          <Collapse className="faq-accordion" accordion>
-            <Panel
-              header="Why does turning my device off and on again solve all issues?"
-              key="1"
-            >
-              <p>
-                Because it clears the memory and starts the system from scratch.
-              </p>
-            </Panel>
-
-            <Panel
-              header="Why does turning my device off and on again solve all issues?"
-              key="2"
-            >
-              <p>
-                Because it clears the memory and starts the system from scratch.
-              </p>
-            </Panel>
-
-            <Panel
-              header="Why does turning my device off and on again solve all issues?"
-              key="3"
-            >
-              <p>
-                Because it clears the memory and starts the system from scratch.
-              </p>
-            </Panel>
-
-            <Panel
-              header="Why does turning my device off and on again solve all issues?"
-              key="4"
-            >
-              <p>
-                Because it clears the memory and starts the system from scratch.
-              </p>
-            </Panel>
-          </Collapse>
         </div>
       </div>
     </div>

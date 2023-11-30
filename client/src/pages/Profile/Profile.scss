@@ -5,16 +5,35 @@
     background: #fff;
   }
 
+  .site-layout {
+    padding: 0 24px 24px;
+  }
+
+  .content-area {
+    padding: 24px;
+    margin: 0;
+    minheight: 280px;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 
-    p {
-      font-size: 0.5em;
-      font-weight: 400;
+    h1 {
+      margin: 0; // If needed, adjust the margin of the header
+
+      p {
+        font-size: 0.5em;
+        font-weight: 400;
+      }
     }
+  }
+
+  .menu {
+    height: 100%;
+    border-right: 0;
   }
 
   .category-tag {
@@ -27,7 +46,5 @@
       background-color: #ffcccc;
       color: #ff4d4f;
     }
-
-    // Define other color styles...
   }
 }
