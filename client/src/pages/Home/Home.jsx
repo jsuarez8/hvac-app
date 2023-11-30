@@ -1,9 +1,13 @@
 import React from "react";
+import { Collapse } from "antd";
 import HomePageImage from "./../../img/man-relaxing-on-couch.png";
 import { Card, Flex, Typography } from "antd";
 import "./Home.scss";
 import ServiceBoxes from "../../components/ServiceBoxes/ServiceBoxes.jsx";
 import HomePageConsultation from "./../../img/fort-myers-city.png";
+import Logo from "./../../img/logo-1.png";
+
+const { Panel } = Collapse;
 
 const Home = () => {
   return (
@@ -33,35 +37,50 @@ const Home = () => {
           </Flex>
         </Card>
       </div>
+
       {/* Service Boxes Section */}
       <ServiceBoxes />
 
-      <div className="home-paragraph">
-        <div className="home-paragraph-container">
-          <div className="home-paragraph-title">
-            <h1>We're Excited To Meet You!</h1>
-            <p>
-              Welcome to Breeze Boss, the leading authority in HVAC excellence
-              serving the vibrant communities of Fort Myers, Naples, Estero, and
-              the broader Southwest Florida area. Our seasoned team of certified
-              professionals is dedicated to enhancing your indoor climate with
-              superior HVAC solutions. At Breeze Boss, we pride ourselves on our
-              legacy of quality, delivering state-of-the-art installations,
-              meticulous repairs, and all-encompassing maintenance services
-              designed for both residential and commercial settings. In the
-              unique warmth of Southwest Florida, Breeze Boss stands out by
-              providing customized services that focus on optimizing energy
-              efficiency and minimizing costs. We don't just address your HVAC
-              needs; we innovate and adapt to ensure that your living and
-              working spaces are epitomes of comfort and efficiency year-round.
-              Our commitment to your satisfaction is unwavering, as we blend
-              traditional values of service with cutting-edge technology.
-              Embrace the Breeze Boss difference and feel confident that your
-              indoor air quality and comfort are in expert hands. Reach out to
-              us for a personalized consultation, and take the first step
-              towards a cooler, more comfortable tomorrow.
-            </p>
-          </div>
+      {/* More About Us Section */}
+
+      <div className="service-info">
+        <div className="service-image-wrapper">
+          <img src={Logo} alt="Service Logo" className="service-image" />
+        </div>
+        <div className="service-content">
+          <h2>More About Our Service at Breeze Boss Ft. Myers</h2>
+          <p>
+            When Breeze Boss Ft. Myers first opened for business in 1988, we set
+            out with a goal that’s precisely the same as it is today: giving you
+            the best possible service whatever the problem is. From making
+            repairs to new installation, every job starts with dedicating
+            ourselves to finding a solution that works for you.
+          </p>
+          <p>
+            So what can Breeze Boss Ft. Myers offer?
+            <ol>
+              <li>
+                Certified Experts: Our technicians and installers bring years of
+                HVAC experience to the table. From brand-new mini-splits to
+                cutting-edge geothermal heat pumps, we understand how to meet
+                your unique comfort needs with the highest standards of customer
+                service.{" "}
+              </li>
+              <li>
+                A Complete Sense of Comfort: Mild temperatures are important to
+                home comfort, but there’s a lot more to it. Our indoor air
+                quality professionals can improve humidity levels and airflow
+                while also reducing airborne pollution.{" "}
+              </li>
+              <li>
+                Honest, yet Tailored Solutions: We’re always straightforward
+                about what we think works best for you. We never rely on
+                unexpected costs or confusing industry terms. You can trust that
+                our recommendations mean more long-term savings and higher
+                energy efficiency.
+              </li>
+            </ol>
+          </p>
         </div>
       </div>
 
@@ -96,6 +115,51 @@ const Home = () => {
               SCHEDULE A CONSULTATION NOW!
             </a>
           </div>
+        </div>
+      </div>
+
+      <div className="faq-container">
+        <div className="faq-card">
+          <div className="faq-header">
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <Collapse className="faq-accordion" accordion>
+            <Panel
+              header="Why does turning my device off and on again solve all issues?"
+              key="1"
+            >
+              <p>
+                Because it clears the memory and starts the system from scratch.
+              </p>
+            </Panel>
+
+            <Panel
+              header="Why does turning my device off and on again solve all issues?"
+              key="2"
+            >
+              <p>
+                Because it clears the memory and starts the system from scratch.
+              </p>
+            </Panel>
+
+            <Panel
+              header="Why does turning my device off and on again solve all issues?"
+              key="3"
+            >
+              <p>
+                Because it clears the memory and starts the system from scratch.
+              </p>
+            </Panel>
+
+            <Panel
+              header="Why does turning my device off and on again solve all issues?"
+              key="4"
+            >
+              <p>
+                Because it clears the memory and starts the system from scratch.
+              </p>
+            </Panel>
+          </Collapse>
         </div>
       </div>
     </div>

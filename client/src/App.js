@@ -4,7 +4,7 @@ import Contact from "./pages/Contact/Contact.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Auth/Login.jsx";
 import Register from "./pages/Auth/Register.jsx";
-import Services from "./pages/Services";
+import Services from "./pages/HVAC Services/Services.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
 import "./index.scss";
@@ -61,20 +61,6 @@ const router = createBrowserRouter([
     element: <Login />,
   },
 
-  {
-    path: "/about",
-    element: <About />,
-  },
-
-  {
-    path: "/services",
-    element: <Services />,
-  },
-
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
   {
     path: "/profile",
     element: <Profile />,

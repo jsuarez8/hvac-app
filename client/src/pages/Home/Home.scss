@@ -54,32 +54,6 @@
     }
   }
 
-  .home-paragraph-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; // This will center-align the child elements horizontally
-    text-align: left; // This will center-align the text within the child elements
-
-    height: fit-content;
-    padding: 150px;
-  }
-
-  .home-paragraph-title {
-    h1 {
-      // Style for main title (h1)
-      margin-bottom: 40px; // Adds space below the title
-      padding-bottom: 10px; // Adds padding below the title for the line
-      text-align: center;
-    }
-
-    p {
-      margin-top: 20px; // Adds space above the paragraph
-      margin-bottom: 20px; // Adds space below the paragraph
-      line-height: 1.7; // Increases the line height for better readability
-      max-width: 800px; // You can set a max-width to control the text block width
-    }
-  }
-
   .homepage-consultation-container {
     display: flex;
     flex-direction: column;
@@ -136,6 +110,102 @@
           lightcoral,
           10%
         ); // Darken the button color on hover
+      }
+    }
+  }
+
+  // FAQ Styles
+  .faq-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+
+    .faq-card {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 550px;
+      margin: 20px;
+
+      .faq-header {
+        padding: 20px;
+        background-color: #f5f5f5;
+
+        h2 {
+          font-size: 24px;
+          margin: 0;
+        }
+      }
+
+      .faq-accordion {
+        .ant-collapse-item {
+          .ant-collapse-header {
+            font-size: 16px;
+            font-weight: 500;
+          }
+
+          .ant-collapse-content {
+            .ant-collapse-content-box {
+              padding: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // About Us Styles
+  .service-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .service-image-wrapper {
+      max-width: 100%; // Ensures the wrapper doesn't exceed the width of the container
+      overflow: hidden; // Ensures the image doesn't overflow the wrapper
+      margin-bottom: 40px;
+
+      .service-image {
+        max-width: 100%; // Ensures the image is responsive and doesn't overflow
+        max-height: 350px;
+        height: auto;
+        display: auto;
+        margin-bottom: -15px;
+
+        &:hover {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transform: translateY(-5px);
+        }
+      }
+    }
+    .service-content {
+      position: relative;
+      z-index: -1;
+      display: inline-block;
+      text-align: left;
+      padding: 55px 25px;
+      margin-top: -100px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      max-width: 900px;
+
+      h2 {
+        color: #d32f2f;
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-bottom: 1rem;
+        z-index: 2;
+        position: relative;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #333;
+        z-index: 2;
+        position: relative;
+        padding: 20px;
       }
     }
   }
