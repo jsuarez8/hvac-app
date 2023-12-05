@@ -7,9 +7,9 @@ const router = express.Router();
 router.use(json());
 
 // Get all contacts
-router.get("/contact", getContacts);
+router.get("/", getContacts);
 
 // Add a new contact
-router.post("/contact", addContact);
+router.post("/", addContact);
 
 export default router;

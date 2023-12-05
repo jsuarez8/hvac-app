@@ -1,34 +1,22 @@
-import React, { useState } from "react";
 import { Form, Input, Button, Card, Divider } from "antd";
 import "./Contact.scss";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lasName: "",
-    email: "",
-    phone: "",
-    assistance: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...formData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (values) => {
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("http://localhost:8800/contacts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(values),
       });
+
+      console.log("Response status:", response.status);
+      const responseData = await response.json();
+      console.log("Response data:", responseData);
+      console.log("Form data being sent:", values);
+
       if (response.ok) {
         console.log("Form data submitted successfully");
       } else {
@@ -78,47 +66,45 @@ function Contact() {
             scrollToFirstError
           >
             <Form.Item
+              name="firstName"
               label="First Name"
               rules={[
                 { required: true, message: "Please input your first name!" },
               ]}
             >
-              <Input onChange={handleInputChange} placeholder="First Name" />
+              <Input placeholder="First Name" />
             </Form.Item>
+
             <Form.Item
+              name="lastName"
               label="Last Name"
               rules={[
                 { required: true, message: "Please input your last name!" },
               ]}
             >
-              <Input onChange={handleInputChange} placeholder="Last Name" />
+              <Input placeholder="Last Name" />
             </Form.Item>
+
             <Form.Item
+              name="email"
               label="Email"
               rules={[{ required: true, message: "Please input your email!" }]}
             >
-              <Input
-                onChange={handleInputChange}
-                placeholder="Email"
-                type="email"
-              />
+              <Input placeholder="Email" type="email" />
             </Form.Item>
+
             <Form.Item
+              name="phone"
               label="Phone Number"
               rules={[
                 { required: true, message: "Please input your phone number!" },
               ]}
             >
-              <Input
-                onChange={handleInputChange}
-                placeholder="(123) 456-7890"
-              />
+              <Input placeholder="(123) 456-7890" />
             </Form.Item>
-            <Form.Item label="Description">
-              <Input.TextArea
-                onChange={handleInputChange}
-                placeholder="Leave your message here"
-              />
+
+            <Form.Item name="message" label="Description">
+              <Input.TextArea placeholder="Leave your message here" />
             </Form.Item>
             <div className="contact-body-bottom">
               <p>
@@ -126,13 +112,12 @@ function Contact() {
                 we never sell our customer's information!
               </p>
             </div>
-            <Form className="contact-form" onFinish={handleSubmit}>
-              <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                <Button htmlType="submit" className="contact-button">
-                  Send your request
-                </Button>
-              </Form.Item>
-            </Form>
+
+            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+              <Button htmlType="submit" className="contact-button">
+                Send your request
+              </Button>
+            </Form.Item>
           </Form>
         </Card>
       </div>

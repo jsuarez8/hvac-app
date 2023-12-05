@@ -31,7 +31,17 @@ function Services() {
             <img src={hvacMaintenanceLogo} alt="Maintenance" />
           </div>
           <div className="service-text">
-            <p>Beat the heat with our efficient cooling systems.</p>
+            <p>
+              Experience the peace of mind that comes with our top-tier HVAC
+              Maintenance services. At the heart of our offering is a commitment
+              to ensuring your heating, ventilation, and air conditioning
+              systems operate at peak efficiency year-round. Our expert
+              technicians specialize in comprehensive maintenance routines,
+              encompassing thorough inspections, timely cleaning, and precise
+              tuning of all components. Trust us to provide the meticulous care
+              your HVAC system deserves, keeping it running smoothly and
+              reliably through every season.
+            </p>
           </div>
         </div>
 

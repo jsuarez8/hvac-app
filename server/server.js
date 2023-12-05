@@ -52,7 +52,7 @@ app.use("/register", registerRouter);
 // When user accesses localhost3000/Login the server access UserRouter and its functions within (GET, POST, etc)
 app.use("/login", loginRouter);
 
-app.use("/contact", contactRouter);
+app.use("/contacts", contactRouter);
 
 // Error-handling middleware for handling errors during request/response
 app.use((err, req, res, next) => {

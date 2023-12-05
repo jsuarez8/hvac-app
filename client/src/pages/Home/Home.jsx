@@ -89,42 +89,59 @@ const Home = () => {
             </div>
             <Collapse className="faq-accordion" accordion>
               <Panel
-                header="Why does turning my device off and on again solve all issues?"
+                header="Why should I have regular maintenance on my HVAC system?"
                 key="1"
               >
                 <p>
-                  Because it clears the memory and starts the system from
-                  scratch.
+                  Regular maintenance of your HVAC system is crucial for
+                  ensuring its efficiency and longevity. It helps in identifying
+                  potential issues before they become major problems, ensures
+                  your system is running at optimal performance, and can
+                  significantly reduce energy costs. Additionally, regular
+                  check-ups can improve air quality and provide a more
+                  comfortable living environment.
                 </p>
               </Panel>
 
               <Panel
-                header="Why does turning my device off and on again solve all issues?"
+                header="How often should I replace my HVAC filters?"
                 key="2"
               >
                 <p>
-                  Because it clears the memory and starts the system from
-                  scratch.
+                  The frequency of changing your HVAC filters depends on several
+                  factors, including the type of filter, your usage patterns,
+                  and environmental conditions. Generally, it's recommended to
+                  replace standard filters every 30-90 days. However, if you
+                  have pets, allergies, or live in a dusty area, you might need
+                  to change them more frequently.
                 </p>
               </Panel>
 
               <Panel
-                header="Why does turning my device off and on again solve all issues?"
+                header="What are the signs that my HVAC system needs repair?"
                 key="3"
               >
                 <p>
-                  Because it clears the memory and starts the system from
-                  scratch.
+                  Key signs that your HVAC system may need repair include
+                  unusual noises, poor airflow, inconsistent temperatures,
+                  higher than usual energy bills, and the system frequently
+                  turning on and off. If you notice any of these symptoms, it's
+                  advisable to contact a professional technician to diagnose and
+                  fix the issue promptly.
                 </p>
               </Panel>
 
               <Panel
-                header="Why does turning my device off and on again solve all issues?"
+                header="Is it necessary to have my ductwork cleaned, and how often?"
                 key="4"
               >
                 <p>
-                  Because it clears the memory and starts the system from
-                  scratch.
+                  Duct cleaning is important for maintaining indoor air quality
+                  and the efficient operation of your HVAC system. While there's
+                  no one-size-fits-all answer, it's generally recommended to
+                  have your ductwork cleaned every 3 to 5 years. However, this
+                  can vary based on factors like pets, allergies, and the
+                  overall air quality in your home.
                 </p>
               </Panel>
             </Collapse>
